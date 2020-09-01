@@ -10,6 +10,22 @@ defmodule Kaffy.Utils do
   end
 
   @doc """
+  Returns the :admin_logo_image config if present, otherwise returns "Kaffy"
+  """
+  @spec logo_image() :: String.t()
+  def logo_image() do
+    env(:admin_logo_image, "/kaffy/assets/images/logo.png")
+  end
+
+  @doc """
+  Returns the :admin_logo_image_thumbnail config if present, otherwise returns "Kaffy"
+  """
+  @spec logo_image_thumbnail() :: String.t()
+  def logo_image_thumbnail() do
+    env(:admin_logo_image_thumbnail, "/kaffy/assets/images/logo-mini.png")
+  end
+
+  @doc """
   Returns the JSON package used by phoenix configs. If no such config exists, raise an exception.
   """
   @spec json() :: atom()
